@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 import RecipeInterface from '../interfaces/RecipeInterface';
 
 const slideInAnim = keyframes`
@@ -30,7 +32,7 @@ interface ContainerProps {
     img: string; 
 }
 
-const RecipeContainer = styled.figure`
+const RecipeContainer = styled(Link)`
     display: grid;
     background: #FFF;
     box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);
@@ -40,6 +42,8 @@ const RecipeContainer = styled.figure`
     grid-template-rows: 3fr 1fr;
     animation: ${slideInAnim} 1s;
     transition: background .5s;
+    text-decoration: none;
+    color: #FFF;
     > div {
         background: linear-gradient(-135deg, transparent 40%, rgba(0,0,0,0.8), transparent, rgba(0,0,0,1), transparent);
         font-size: 1em;
@@ -54,7 +58,11 @@ const RecipeContainer = styled.figure`
     &:hover {
         cursor: pointer;        
         > div {
-            linear-gradient(-135deg, transparent, rgba(0,0,0,0.8), transparent, rgba(0,0,0,1), transparent, rgba(0,0,0,0.5));    
+            ${props => {
+                return (
+                    'linear-gradient(-135deg, transparent, rgba(0,0,0,0.8), transparent, rgba(0,0,0,1), transparent, rgba(0,0,0,0.5));'
+                );
+            }}    
             background-size: 400% 400%;
             animation: ${gradientAnim} 20s ease infinite;
         }
@@ -72,13 +80,18 @@ export default class RecipeCard extends React.Component<Props, object> {
 
     render() {
         return (
-            <RecipeContainer img={this.props.recipe.img}>
+            <RecipeContainer 
+                to={{
+                    pathname: `/recipes/${this.props.recipe.id}`,
+                    state: this.props.recipe
+                }} 
+                img={this.props.recipe.img}>
                 <div>
                     <h2>{this.props.recipe.name}</h2>
                     <p>
                         {this.props.recipe.desc}
                     </p>
-                </div>
+                </div>           
             </RecipeContainer>
         );
     }
