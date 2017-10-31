@@ -34,17 +34,23 @@ export default class Recipes extends React.Component<Props, State> {
                     img: 'http://victoriabuzz.com/wp-content/uploads/2017/02/04-traits-ice-cream-chocolate.jpg',
                     author: 'Sent doa',
                     ingredients: [
-                        'a', 'b', 'c'
+                        '4 egg yolks',
+                        '1/2 cup granulated sugar',
+                        '1 cup milk - Whole milk, half & half cream, and/or low-fat condensed milk may be used to lower the calories (these substitutions may effect how creamy your ice cream will turn out).',
+                        '1 cup heavy cream or whipping cream',
+                        'Crushed Ice',
+                        'Rock Salt - large crystal salt with a gray color, due to minerals not removed from normal table salt.  This form of salt is available in most grocery stores, and also through hardware stores.',
+                        '2 teaspoons pure vanilla extract or 1 vanilla bean, split and scraped'
                     ],
                     steps: [
-                        'step1',
-                        'step2',
-                        'step3'
-                    ],
-                    tags: [
-                        'tag1',
-                        'tag2',
-                        'tag3'
+                        'In a medium-size bowl, add the egg yolks and sugar; beat until thick and lemon colored; set aside.  NOTE: If making Chocolate Ice Cream, add the cocoa powder to the egg mixture now.',
+                        'In a small heavy saucepan over low to medium-low heat, add milk.  Slowly bring milk just to a gentle simmer or until it begins to bubble around the edges (do not let the mixture boil).  Remove from heat.',
+                        'Gradually stir hot milk into beaten egg/sugar mixture with a wire whisk.  Pour mixture back into the saucepan.  Over low heat, stirring constantly, heat until the mixture (custard) thickens and will coat the back of a metal spoon with a thin film, approximately 7 to 10 minutes.',
+                        'On your instant-read cooking thermometer, the temperature should reach between 165 and 180 degrees F.  This process is known as tempering.  NOTE: Do not let the mixture boil or it will curdle.  If, of course by accident, your custard base does curdle, immediately remove from heat and place in a blender; process until smooth.',
+                        'The FDA and the USDA advise consumers to use a recipe that contains a cooked custard base when using eggs in your ice cream recipe.  The custard base must reach 160 degrees F, measured with a cooking thermometer, to kill the salmonella bacteria.  Additionally, it is important to only used pasteurized milk and cream products in making your homemade ice cream.',
+                        'Remove the custard mixture from heat and let custard cool.  NOTE: Cool quickly by setting pan in ice or cold water and stirring for a few minutes. Using the ice water method, the mixture will cool in about 15 minutes.  Once the custard is cool, cover and refrigerate until thoroughly chilled, at least 1 hour or until it reaches 65 degrees F. on your instant-read cooking thermometer.',
+                        'When the custard base is cold, stir in the heavy cream and vanilla extract or vanilla bean scrapings.  Stir or whisk just until mixture is well combined.  If you want to add any extra additions (fresh or dried fruit, candies or confections, nuts, or alcohol), now is the time (see below for directions).  The ice cream is now ready for the freezing process.',
+                        "Transfer the mixture into your ice cream maker and freeze according to the manufacturer's instructions.  Either churn your ice cream by hand or by motor."
                     ]
                 },
                 {
@@ -63,11 +69,6 @@ export default class Recipes extends React.Component<Props, State> {
                         'step1',
                         'step2',
                         'step3'
-                    ],
-                    tags: [
-                        'tag1',
-                        'tag2',
-                        'tag3'
                     ]
                 },
                 {
@@ -86,11 +87,6 @@ export default class Recipes extends React.Component<Props, State> {
                         'step1',
                         'step2',
                         'step3'
-                    ],
-                    tags: [
-                        'tag1',
-                        'tag2',
-                        'tag3'
                     ]
                 },
                 {
@@ -111,11 +107,6 @@ export default class Recipes extends React.Component<Props, State> {
                         'step1',
                         'step2',
                         'step3'
-                    ],
-                    tags: [
-                        'tag1',
-                        'tag2',
-                        'tag3'
                     ]
                 }
             ]

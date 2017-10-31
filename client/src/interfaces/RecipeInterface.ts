@@ -6,5 +6,4 @@ export default interface RecipeInterface {
     author: string;
     ingredients: string[];
     steps: string[];
-    tags: string[];
 }

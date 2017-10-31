@@ -14,6 +14,10 @@ const centerTextLayout = `
     }
 `;
 
+const darkGreyText = `
+    color: #404040;
+`;
+
 const RecipeHeader = styled.div`
     min-height: 100vh;
     display: grid;
@@ -52,6 +56,9 @@ const RecipeDesc = styled.div`
     ${centerTextLayout}
     > p {
         font-family: 'Oxygen', sans-serif;
+        > h3 {
+            ${darkGreyText}
+        }
     }
 `;
 
@@ -60,6 +67,10 @@ const ListItemGroup = styled.div`
     grid-gap: 1em;
     grid-column: 2/3;
     grid-row: 2/3;
+    > h3 {
+        font-family: 'Oxygen', sans-serif;
+        ${darkGreyText}
+    }
 `;
 
 const ListItem = styled.div`
@@ -68,12 +79,16 @@ const ListItem = styled.div`
     box-shadow: 0px 5px 10px 1px rgba(64, 64, 64, 0.2);
     border-radius: 5px;
     ${centerTextLayout}
+    > p {
+        margin: 0;
+        font-family: 'Oxygen', sans-serif;
+    }
 `;
 
-const RecipeIngredients = styled.div`
+const RecipeSubGroup = styled.div`
     display: grid;
     grid-template-columns: 0.2fr 1fr 0.2fr;
-    grid-template-rows: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 1em 1fr 1em;
     background: #E5E5E5;
 `;
 
@@ -114,13 +129,19 @@ export default class Recipe extends React.Component<RecipeProps, RecipeState> {
             </RecipeHeader>,
             <RecipeDesc key="desc">
                 <p>
+                    <h3>
+                        Description: 
+                    </h3>
                     {
                         this.state.recipe.desc
                     }
                 </p>
             </RecipeDesc>,
-            <RecipeIngredients key="ingredients">
+            <RecipeSubGroup key="ingredients">
                 <ListItemGroup>
+                <h3>
+                    Ingredients: 
+                </h3>
                 {
                     this.state.recipe.ingredients.map((ing, i) => {
                         return (
@@ -135,7 +156,27 @@ export default class Recipe extends React.Component<RecipeProps, RecipeState> {
                     })
                 }
                 </ListItemGroup>
-            </RecipeIngredients>
+            </RecipeSubGroup>,
+            <RecipeSubGroup key="steps">
+            <ListItemGroup>
+            <h3>
+                Steps: 
+            </h3>
+            {
+                this.state.recipe.steps.map((step, i) => {
+                    return (
+                        <ListItem key={i}>
+                            <p>
+                                {
+                                    step
+                                }
+                            </p>
+                        </ListItem>
+                    );
+                })
+            }
+            </ListItemGroup>
+        </RecipeSubGroup>
         ];
     }
 }
